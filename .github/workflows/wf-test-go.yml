@@ -1,0 +1,46 @@
+name: test-go
+
+on:
+  workflow_call:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v4
+        with:
+          skip-pkg-cache: true
+          args: --timeout=10m
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: |
+          set -o pipefail
+          go test -json ./... |
+          go run -mod=mod github.com/mfridman/tparse -all -format markdown >>"$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"
+
+  codegen-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go generate ./...
+      - run: |
+          DIFF=$(git status --porcelain)
+          if [ -n "$DIFF" ]; then
+            echo "$DIFF"
+            exit 1
+          fi
