@@ -1,0 +1,25 @@
+type: runn
+
+status:
+  class: receiver
+  stability:
+    development: [metrics]
+  codeowners:
+    active: [Arthur1]
+
+attributes:
+  runn.runbook.desc:
+    description: description of runbook
+    type: string
+
+metrics:
+  runn.status:
+    description: 1 if the operation has finished successfully, otherwise 0. 
+    enabled: true
+    sum:
+      value_type: int
+      aggregation_temporality: cumulative
+      monotonic: false
+    unit: 1
+    attributes:
+      - runn.runbook.desc
