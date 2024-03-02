@@ -16,8 +16,14 @@ import (
 )
 
 type runnScraper struct {
-	cfg *config
-	mb  *metadata.MetricsBuilder
+	cfg    *config
+	mb     *metadata.MetricsBuilder
+	opDefs []*runnOperationDef
+}
+
+type runnOperationDef struct {
+	runnbookFileName   string
+	runnbookFileIsTemp bool
 }
 
 var _ receiver.Metrics = new(runnScraper)
@@ -30,29 +36,39 @@ func newScraper(cfg *config, settings receiver.CreateSettings) *runnScraper {
 }
 
 func (s *runnScraper) Start(ctx context.Context, _ component.Host) error {
+	opDefs := make([]*runnOperationDef, 0, len(s.cfg.Runbooks))
+	for _, runbook := range s.cfg.Runbooks {
+		f, err := os.CreateTemp("", "runnreceiver-runbook")
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+
+		if _, err := f.WriteString(runbook.Body); err != nil {
+			return err
+		}
+		opDefs = append(opDefs, &runnOperationDef{
+			runnbookFileName:   f.Name(),
+			runnbookFileIsTemp: true,
+		})
+	}
+	s.opDefs = opDefs
+
 	return nil
 }
 
 func (s *runnScraper) Scrape(ctx context.Context) (pmetric.Metrics, error) {
-	for _, runbook := range s.cfg.Runbooks {
-		if err := s.scrapeForRunbook(ctx, runbook); err != nil {
+	for _, opDef := range s.opDefs {
+		if err := s.scrapeForRunbook(ctx, opDef); err != nil {
 			return pmetric.NewMetrics(), err
 		}
 	}
 	return s.mb.Emit(), nil
 }
 
-func (s *runnScraper) scrapeForRunbook(ctx context.Context, runbook *runbookConfig) error {
-	f, err := os.CreateTemp("", "runnreceiver-runbook")
-	if err != nil {
-		return err
-	}
-	defer os.Remove(f.Name())
-
-	f.WriteString(runbook.Body)
-
+func (s *runnScraper) scrapeForRunbook(ctx context.Context, opDef *runnOperationDef) error {
 	opts := []runn.Option{
-		runn.Book(f.Name()),
+		runn.Book(opDef.runnbookFileName),
 		runn.Profile(true),
 		runn.Scopes("read:parent"),
 	}
@@ -92,5 +108,10 @@ func btoi(b bool) int64 {
 }
 
 func (s *runnScraper) Shutdown(ctx context.Context) error {
+	for _, opDef := range s.opDefs {
+		if opDef.runnbookFileIsTemp {
+			os.Remove(opDef.runnbookFileName)
+		}
+	}
 	return nil
 }
