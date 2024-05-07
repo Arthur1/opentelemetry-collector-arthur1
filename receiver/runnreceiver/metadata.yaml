@@ -1,4 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Arthur1/otelcol-metadata-schema/main/metadata.schema.json
+
 type: runn
+scope_name: otelcol/runnreceiver
 
 status:
   class: receiver
@@ -6,6 +9,7 @@ status:
     development: [metrics]
   codeowners:
     active: [Arthur1]
+  distributions: [arthur-1]
 
 attributes:
   runn.runbook.desc:
@@ -14,7 +18,7 @@ attributes:
 
 metrics:
   runn.status:
-    description: 1 if the operation has finished successfully, otherwise 0. 
+    description: 1 if the operation has finished successfully, otherwise 0.
     enabled: true
     sum:
       value_type: int

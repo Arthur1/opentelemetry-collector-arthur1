@@ -23,12 +23,13 @@ func NewFactory() receiver.Factory {
 }
 
 func createDefaultConfig() component.Config {
-	cfg := scraperhelper.NewDefaultScraperControllerSettings(metadata.Type)
-	cfg.CollectionInterval = 60 * time.Second
+	cc := scraperhelper.NewDefaultControllerConfig()
+	cc.CollectionInterval = 60 * time.Second
+	mbc := metadata.DefaultMetricsBuilderConfig()
 	return &config{
-		ScraperControllerSettings: cfg,
-		MetricsBuilderConfig:      metadata.DefaultMetricsBuilderConfig(),
-		Runbooks:                  []*runbookConfig{},
+		ControllerConfig:     cc,
+		MetricsBuilderConfig: mbc,
+		Runbooks:             []*runbookConfig{},
 	}
 }
 
@@ -50,6 +51,6 @@ func createMetricsReceiver(
 		return nil, err
 	}
 	return scraperhelper.NewScraperControllerReceiver(
-		&c.ScraperControllerSettings, settings, consumer, scraperhelper.AddScraper(scraper),
+		&c.ControllerConfig, settings, consumer, scraperhelper.AddScraper(scraper),
 	)
 }
