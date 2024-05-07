@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Arthur1/otelcol-metadata-schema/main/metadata.schema.json
+
+type: cloudflaremetrics
+scope_name: otelcol/cloudflaremetricsreceiver
+
+status:
+  class: receiver
+  stability:
+    development: [metrics]
+  codeowners:
+    active: [Arthur1]
+  distributions: [arthur-1]
+
+resource_attributes:
+  cloudflare.zone.domain:
+    enabled: true
+    description: The domain name of Cloudflare zone
+    type: string
+
+attributes:
+  cloudflare.http.cached:
+    description: wheather responses for HTTP requests are served from cache
+    type: bool
+
+metrics:
+  cloudflare.http.bytes:
+    description: bytes returned to client for HTTP requests
+    enabled: true
+    sum:
+      value_type: int
+      aggregation_temporality: delta
+      monotonic: true
+    unit: By
+    attributes:
+      - cloudflare.http.cached
+  cloudflare.http.requests:
+    description: bytes returned to client for HTTP requests
+    enabled: true
+    sum:
+      value_type: int
+      aggregation_temporality: delta
+      monotonic: true
+    unit: "{request}"
+    attributes:
+      - cloudflare.http.cached
+  cloudflare.http.unique_ips:
+    description: unique visitor IP addresses of HTTP requests
+    enabled: true
+    sum:
+      value_type: int
+      aggregation_temporality: delta
+      monotonic: true
+    unit: "{address}"
