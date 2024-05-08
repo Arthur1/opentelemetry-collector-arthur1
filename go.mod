@@ -2,7 +2,7 @@
 
 module github.com/Arthur1/opentelemetry-collector-arthur1
 
-go 1.22.2
+go 1.22.3
 
 require (
 	github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.0.0
