@@ -45,13 +45,14 @@ var query struct {
 				Uniq struct {
 					Uniques int64
 				}
-			} `graphql:"httpRequests1hGroups(filter: {date: $date}, limit: 1, orderBy: [datetime_DESC])"`
+			} `graphql:"httpRequests1hGroups(filter: {datetime_geq: $datetimeFrom, datetime_lt: $datetimeTo}, limit: 1, orderBy: [datetime_DESC])"`
 		} `graphql:"zones(filter: {zoneTag: $zoneId})"`
 	}
 }
 
 func (s *cloudflareScraper) scrape(ctx context.Context) (pmetric.Metrics, error) {
-	now := time.Now().UTC()
+	to := time.Now().Add(-1 * time.Hour).UTC()
+	from := to.Add(-3 * time.Hour)
 	var errs error
 	for _, zoneDomain := range s.cfg.ZoneDomains {
 		zoneID, err := s.apiCli.ZoneIDByName(zoneDomain)
@@ -60,9 +61,9 @@ func (s *cloudflareScraper) scrape(ctx context.Context) (pmetric.Metrics, error)
 			continue
 		}
 		variables := map[string]any{
-			"zoneId": zoneID,
-			// TODO: specify datetime
-			"date": now.Format(time.DateOnly),
+			"zoneId":       zoneID,
+			"datetimeFrom": from.Format(time.RFC3339),
+			"datetimeTo":   to.Format(time.RFC3339),
 		}
 
 		if err := s.gqlCli.Query(ctx, &query, variables); err != nil {
