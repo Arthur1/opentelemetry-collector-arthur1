@@ -24,7 +24,7 @@ bytes returned to client for HTTP requests
 
 | Name | Description | Values |
 | ---- | ----------- | ------ |
-| cloudflare.http.cached | wheather responses for HTTP requests are served from cache | Any Bool |
+| cloudflare.http.cached | whether responses for HTTP requests are served from cache | Any Bool |
 
 ### cloudflare.http.requests
 
@@ -38,7 +38,7 @@ bytes returned to client for HTTP requests
 
 | Name | Description | Values |
 | ---- | ----------- | ------ |
-| cloudflare.http.cached | wheather responses for HTTP requests are served from cache | Any Bool |
+| cloudflare.http.cached | whether responses for HTTP requests are served from cache | Any Bool |
 
 ### cloudflare.http.unique_ips
 

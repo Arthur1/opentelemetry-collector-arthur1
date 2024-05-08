@@ -19,7 +19,7 @@ resource_attributes:
 
 attributes:
   cloudflare.http.cached:
-    description: wheather responses for HTTP requests are served from cache
+    description: whether responses for HTTP requests are served from cache
     type: bool
 
 metrics:
