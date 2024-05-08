@@ -19,13 +19,24 @@ receivers:
                     body: null
               test: current.res.status == 404
     collection_interval: 30s
-
+  cloudflaremetrics:
+    api_token: ${env:CLOUDFLARE_API_TOKEN}
+    zone_domains: [agricolajp.dev]
 exporters:
   debug:
     verbosity: detailed
+  otlp/mackerel:
+    endpoint: otlp.mackerelio.com:4317
+    compression: gzip
+    headers:
+      Mackerel-Api-Key: ${env:MACKEREL_API_KEY}
 
 service:
   pipelines:
     metrics:
-      receivers: [runn/blog_arthur1_dev]
-      exporters: [debug]
+      receivers:
+        - runn/blog_arthur1_dev
+        - cloudflaremetrics
+      exporters:
+        - debug
+        - otlp/mackerel
