@@ -17,9 +17,9 @@ const (
 )
 
 func Meter(settings component.TelemetrySettings) metric.Meter {
-	return settings.MeterProvider.Meter("github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver")
+	return settings.MeterProvider.Meter("otelcol/runnreceiver")
 }
 
 func Tracer(settings component.TelemetrySettings) trace.Tracer {
-	return settings.TracerProvider.Tracer("github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver")
+	return settings.TracerProvider.Tracer("otelcol/runnreceiver")
 }

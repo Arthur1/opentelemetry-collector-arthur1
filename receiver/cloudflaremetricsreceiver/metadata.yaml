@@ -9,7 +9,7 @@ status:
     development: [metrics]
   codeowners:
     active: [Arthur1]
-  distributions: [arthur-1]
+  distributions: [arthur1]
 
 resource_attributes:
   cloudflare.zone.domain:
