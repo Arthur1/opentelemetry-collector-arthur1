@@ -1,4 +1,4 @@
-name: CI for main branch
+name: CI for pull request
 
 on:
   pull_request:
@@ -6,3 +6,6 @@ on:
 jobs:
   test-go:
     uses: ./.github/workflows/wf-test-go.yml
+
+  build:
+    uses: ./.github/workflows/wf-build.yml

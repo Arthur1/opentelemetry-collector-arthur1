@@ -7,3 +7,6 @@ on:
 jobs:
   test-go:
     uses: ./.github/workflows/wf-test-go.yml
+
+  build:
+    uses: ./.github/workflows/wf-build.yml
