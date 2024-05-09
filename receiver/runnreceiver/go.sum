@@ -1017,6 +1017,8 @@ github.com/knadh/koanf/providers/confmap v0.1.0 h1:gOkxhHkemwG4LezxxN8DMOFopOPgh
 github.com/knadh/koanf/providers/confmap v0.1.0/go.mod h1:2uLhxQzJnyHKfxG927awZC7+fyHFdQkd697K4MdLnIU=
 github.com/knadh/koanf/v2 v2.1.0 h1:eh4QmHHBuU8BybfIJ8mB8K8gsGCD/AUQTdwGq/GzId8=
 github.com/knadh/koanf/v2 v2.1.0/go.mod h1:4mnTRbZCK+ALuBXHZMjDfG9y714L7TykVnZkXbMU3Es=
+github.com/knadh/koanf/v2 v2.1.1 h1:/R8eXqasSTsmDCsAyYj+81Wteg8AqrV9CP6gvsTsOmM=
+github.com/knadh/koanf/v2 v2.1.1/go.mod h1:4mnTRbZCK+ALuBXHZMjDfG9y714L7TykVnZkXbMU3Es=
 github.com/kr/fs v0.1.0/go.mod h1:FFnZGqtBN9Gxj7eW1uZ42v5BccTP0vu6NEaFoC2HwRg=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pretty v0.2.0/go.mod h1:ipq/a2n7PKx3OHsz4KJII5eveXtPO4qwEXGdVfWzfnI=
@@ -1218,6 +1220,8 @@ go.opentelemetry.io/collector/config/configtelemetry v0.95.0 h1:HabJZqbOAbNQ52L3
 go.opentelemetry.io/collector/config/configtelemetry v0.95.0/go.mod h1:tl8sI2RE3LSgJ0HjpadYpIwsKzw/CRA0nZUXLzMAZS0=
 go.opentelemetry.io/collector/confmap v0.95.0 h1:0oZwSUaeKTDCP7eewFpQSD+9SxXspiaJWjZDQYGGars=
 go.opentelemetry.io/collector/confmap v0.95.0/go.mod h1:L3djzwpt+jL06wxnHAuy1jPUFcM+MdKGQAsz3B1d6pk=
+go.opentelemetry.io/collector/confmap v0.100.0 h1:r70znwLWUMFRWL4LRcWLhdFfzmTvehXgbnlHFCDm0Tc=
+go.opentelemetry.io/collector/confmap v0.100.0/go.mod h1:BWKPIpYeUzSG6ZgCJMjF7xsLvyrvJCfYURl57E5vhiQ=
 go.opentelemetry.io/collector/consumer v0.95.0 h1:M/N5RDx8/6Hz5L1qWUXdtirtdoV8BEjIxCSdt6cCx+I=
 go.opentelemetry.io/collector/consumer v0.95.0/go.mod h1:tM5aOolWS1zAByMbne2xVOkmVvZrF3VEKY6TkxhmkOs=
 go.opentelemetry.io/collector/pdata v1.2.0 h1:N6VdyEFYJyoHIKqHd0F372eNVD5b+AbH0ZQf7Z2jJ9I=
