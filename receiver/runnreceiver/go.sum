@@ -1240,6 +1240,8 @@ go.opentelemetry.io/collector/confmap v0.100.0 h1:r70znwLWUMFRWL4LRcWLhdFfzmTveh
 go.opentelemetry.io/collector/confmap v0.100.0/go.mod h1:BWKPIpYeUzSG6ZgCJMjF7xsLvyrvJCfYURl57E5vhiQ=
 go.opentelemetry.io/collector/consumer v0.95.0 h1:M/N5RDx8/6Hz5L1qWUXdtirtdoV8BEjIxCSdt6cCx+I=
 go.opentelemetry.io/collector/consumer v0.95.0/go.mod h1:tM5aOolWS1zAByMbne2xVOkmVvZrF3VEKY6TkxhmkOs=
+go.opentelemetry.io/collector/consumer v0.100.0 h1:8sALAcWvizSyrZJCF+zTqD2RLmZAyeCuaQrNS2q6ti0=
+go.opentelemetry.io/collector/consumer v0.100.0/go.mod h1:JOPOq8nSTdnQwc2xdHl4hcuYBYV8gjN2SlFqlqBe/Nc=
 go.opentelemetry.io/collector/pdata v1.2.0 h1:N6VdyEFYJyoHIKqHd0F372eNVD5b+AbH0ZQf7Z2jJ9I=
 go.opentelemetry.io/collector/pdata v1.2.0/go.mod h1:mKXb6527Syb8PT4P9CZOJNbkuHOHjjGTZNNwSKESJhc=
 go.opentelemetry.io/collector/pdata v1.7.0 h1:/WNsBbE6KM3TTPUb9v/5B7IDqnDkgf8GyFhVJJqu7II=
