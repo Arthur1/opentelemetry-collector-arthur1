@@ -9,7 +9,7 @@ require (
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.100.0
 	go.opentelemetry.io/collector/confmap v0.100.0
-	go.opentelemetry.io/collector/consumer v0.95.0
+	go.opentelemetry.io/collector/consumer v0.100.0
 	go.opentelemetry.io/collector/pdata v1.7.0
 	go.opentelemetry.io/collector/receiver v0.95.0
 	go.opentelemetry.io/otel/metric v1.26.0
