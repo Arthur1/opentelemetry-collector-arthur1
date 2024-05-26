@@ -1,23 +1,23 @@
 receivers:
   runn/blog_arthur1_dev:
     runbooks:
-      - body: |
-          desc: blog.arthur1.dev's test
-          runners:
-            req: https://blog.arthur1.dev
-          steps:
-            test1:
-              req:
-                '/':
-                  get:
-                    body: null
-              test: current.res.status == 200
-            test2:
-              req:
-                '/hoge':
-                  get:
-                    body: null
-              test: current.res.status == 404
+      - |
+        desc: blog.arthur1.dev's test
+        runners:
+          req: https://blog.arthur1.dev
+        steps:
+          test1:
+            req:
+              '/':
+                get:
+                  body: null
+            test: current.res.status == 200
+          test2:
+            req:
+              '/hoge':
+                get:
+                  body: null
+            test: current.res.status == 404
     collection_interval: 30s
   cloudflaremetrics:
     api_token: ${env:CLOUDFLARE_API_TOKEN}
