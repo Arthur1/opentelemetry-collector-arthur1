@@ -11,6 +11,58 @@ import (
 	"go.opentelemetry.io/collector/receiver"
 )
 
+type metricRunnElapsedTime struct {
+	data     pmetric.Metric // data buffer for generated metric.
+	config   MetricConfig   // metric config provided by user.
+	capacity int            // max observed number of data points added to the metric.
+}
+
+// init fills runn.elapsed_time metric with initial data.
+func (m *metricRunnElapsedTime) init() {
+	m.data.SetName("runn.elapsed_time")
+	m.data.SetDescription("elapsed time of step")
+	m.data.SetUnit("s")
+	m.data.SetEmptyGauge()
+	m.data.Gauge().DataPoints().EnsureCapacity(m.capacity)
+}
+
+func (m *metricRunnElapsedTime) recordDataPoint(start pcommon.Timestamp, ts pcommon.Timestamp, val float64, runnRunbookDescAttributeValue string, runnRunbookStepKeyAttributeValue string) {
+	if !m.config.Enabled {
+		return
+	}
+	dp := m.data.Gauge().DataPoints().AppendEmpty()
+	dp.SetStartTimestamp(start)
+	dp.SetTimestamp(ts)
+	dp.SetDoubleValue(val)
+	dp.Attributes().PutStr("runn.runbook.desc", runnRunbookDescAttributeValue)
+	dp.Attributes().PutStr("runn.runbook.step.key", runnRunbookStepKeyAttributeValue)
+}
+
+// updateCapacity saves max length of data point slices that will be used for the slice capacity.
+func (m *metricRunnElapsedTime) updateCapacity() {
+	if m.data.Gauge().DataPoints().Len() > m.capacity {
+		m.capacity = m.data.Gauge().DataPoints().Len()
+	}
+}
+
+// emit appends recorded metric data to a metrics slice and prepares it for recording another set of data points.
+func (m *metricRunnElapsedTime) emit(metrics pmetric.MetricSlice) {
+	if m.config.Enabled && m.data.Gauge().DataPoints().Len() > 0 {
+		m.updateCapacity()
+		m.data.MoveTo(metrics.AppendEmpty())
+		m.init()
+	}
+}
+
+func newMetricRunnElapsedTime(cfg MetricConfig) metricRunnElapsedTime {
+	m := metricRunnElapsedTime{config: cfg}
+	if cfg.Enabled {
+		m.data = pmetric.NewMetric()
+		m.init()
+	}
+	return m
+}
+
 type metricRunnStatus struct {
 	data     pmetric.Metric // data buffer for generated metric.
 	config   MetricConfig   // metric config provided by user.
@@ -67,12 +119,13 @@ func newMetricRunnStatus(cfg MetricConfig) metricRunnStatus {
 // MetricsBuilder provides an interface for scrapers to report metrics while taking care of all the transformations
 // required to produce metric representation defined in metadata and user config.
 type MetricsBuilder struct {
-	config           MetricsBuilderConfig // config of the metrics builder.
-	startTime        pcommon.Timestamp    // start time that will be applied to all recorded data points.
-	metricsCapacity  int                  // maximum observed number of metrics per resource.
-	metricsBuffer    pmetric.Metrics      // accumulates metrics data before emitting.
-	buildInfo        component.BuildInfo  // contains version information.
-	metricRunnStatus metricRunnStatus
+	config                MetricsBuilderConfig // config of the metrics builder.
+	startTime             pcommon.Timestamp    // start time that will be applied to all recorded data points.
+	metricsCapacity       int                  // maximum observed number of metrics per resource.
+	metricsBuffer         pmetric.Metrics      // accumulates metrics data before emitting.
+	buildInfo             component.BuildInfo  // contains version information.
+	metricRunnElapsedTime metricRunnElapsedTime
+	metricRunnStatus      metricRunnStatus
 }
 
 // metricBuilderOption applies changes to default metrics builder.
@@ -87,11 +140,12 @@ func WithStartTime(startTime pcommon.Timestamp) metricBuilderOption {
 
 func NewMetricsBuilder(mbc MetricsBuilderConfig, settings receiver.CreateSettings, options ...metricBuilderOption) *MetricsBuilder {
 	mb := &MetricsBuilder{
-		config:           mbc,
-		startTime:        pcommon.NewTimestampFromTime(time.Now()),
-		metricsBuffer:    pmetric.NewMetrics(),
-		buildInfo:        settings.BuildInfo,
-		metricRunnStatus: newMetricRunnStatus(mbc.Metrics.RunnStatus),
+		config:                mbc,
+		startTime:             pcommon.NewTimestampFromTime(time.Now()),
+		metricsBuffer:         pmetric.NewMetrics(),
+		buildInfo:             settings.BuildInfo,
+		metricRunnElapsedTime: newMetricRunnElapsedTime(mbc.Metrics.RunnElapsedTime),
+		metricRunnStatus:      newMetricRunnStatus(mbc.Metrics.RunnStatus),
 	}
 
 	for _, op := range options {
@@ -149,6 +203,7 @@ func (mb *MetricsBuilder) EmitForResource(rmo ...ResourceMetricsOption) {
 	ils.Scope().SetName("otelcol/runnreceiver")
 	ils.Scope().SetVersion(mb.buildInfo.Version)
 	ils.Metrics().EnsureCapacity(mb.metricsCapacity)
+	mb.metricRunnElapsedTime.emit(ils.Metrics())
 	mb.metricRunnStatus.emit(ils.Metrics())
 
 	for _, op := range rmo {
@@ -169,6 +224,11 @@ func (mb *MetricsBuilder) Emit(rmo ...ResourceMetricsOption) pmetric.Metrics {
 	metrics := mb.metricsBuffer
 	mb.metricsBuffer = pmetric.NewMetrics()
 	return metrics
+}
+
+// RecordRunnElapsedTimeDataPoint adds a data point to runn.elapsed_time metric.
+func (mb *MetricsBuilder) RecordRunnElapsedTimeDataPoint(ts pcommon.Timestamp, val float64, runnRunbookDescAttributeValue string, runnRunbookStepKeyAttributeValue string) {
+	mb.metricRunnElapsedTime.recordDataPoint(mb.startTime, ts, val, runnRunbookDescAttributeValue, runnRunbookStepKeyAttributeValue)
 }
 
 // RecordRunnStatusDataPoint adds a data point to runn.status metric.

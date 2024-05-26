@@ -27,11 +27,15 @@ func (ms *MetricConfig) Unmarshal(parser *confmap.Conf) error {
 
 // MetricsConfig provides config for runn metrics.
 type MetricsConfig struct {
-	RunnStatus MetricConfig `mapstructure:"runn.status"`
+	RunnElapsedTime MetricConfig `mapstructure:"runn.elapsed_time"`
+	RunnStatus      MetricConfig `mapstructure:"runn.status"`
 }
 
 func DefaultMetricsConfig() MetricsConfig {
 	return MetricsConfig{
+		RunnElapsedTime: MetricConfig{
+			Enabled: true,
+		},
 		RunnStatus: MetricConfig{
 			Enabled: true,
 		},
