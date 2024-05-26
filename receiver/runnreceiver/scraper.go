@@ -1,14 +1,12 @@
 package runnreceiver // import "github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver"
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
 	"os"
+	"time"
 
 	"github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver/internal/metadata"
 	"github.com/k1LoW/runn"
-	"github.com/k1LoW/stopw"
 	"go.opentelemetry.io/collector/component"
 	"go.opentelemetry.io/collector/pdata/pcommon"
 	"go.opentelemetry.io/collector/pdata/pmetric"
@@ -83,19 +81,12 @@ func (s *runnScraper) scrapeForRunbook(ctx context.Context, opDef *runnOperation
 	}
 	result := o.Result()
 
-	var (
-		buf     bytes.Buffer
-		profile stopw.Span
-	)
-	if err := o.DumpProfile(&buf); err != nil {
-		return err
-	}
-	if err := json.NewDecoder(&buf).Decode(&profile); err != nil {
-		return err
-	}
-	ts := pcommon.NewTimestampFromTime(profile.StartedAt)
+	ts := pcommon.NewTimestampFromTime(time.Now())
 
 	s.mb.RecordRunnStatusDataPoint(ts, btoi(status), result.Desc)
+	for _, step := range result.StepResults {
+		s.mb.RecordRunnElapsedTimeDataPoint(ts, step.Elapsed.Seconds(), result.Desc, step.Key)
+	}
 
 	return nil
 }

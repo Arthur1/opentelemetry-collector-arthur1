@@ -5,15 +5,12 @@ go 1.22.3
 require (
 	github.com/google/go-cmp v0.6.0
 	github.com/k1LoW/runn v0.109.0
-	github.com/k1LoW/stopw v0.9.0
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.101.0
 	go.opentelemetry.io/collector/confmap v0.101.0
 	go.opentelemetry.io/collector/consumer v0.101.0
 	go.opentelemetry.io/collector/pdata v1.8.0
 	go.opentelemetry.io/collector/receiver v0.95.0
-	go.opentelemetry.io/otel/metric v1.26.0
-	go.opentelemetry.io/otel/trace v1.26.0
 	go.uber.org/goleak v1.3.0
 	go.uber.org/zap v1.27.0
 )
@@ -102,6 +99,7 @@ require (
 	github.com/k1LoW/grpcurlreq v0.2.1 // indirect
 	github.com/k1LoW/protoresolv v0.1.0 // indirect
 	github.com/k1LoW/sshc/v4 v4.2.0 // indirect
+	github.com/k1LoW/stopw v0.9.0 // indirect
 	github.com/k1LoW/urlfilepath v0.1.0 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/knadh/koanf/maps v0.1.1 // indirect
@@ -151,8 +149,10 @@ require (
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.49.0 // indirect
 	go.opentelemetry.io/otel v1.26.0 // indirect
 	go.opentelemetry.io/otel/exporters/prometheus v0.48.0 // indirect
+	go.opentelemetry.io/otel/metric v1.26.0 // indirect
 	go.opentelemetry.io/otel/sdk v1.26.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v1.26.0 // indirect
+	go.opentelemetry.io/otel/trace v1.26.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/ratelimit v0.3.1 // indirect
 	golang.org/x/crypto v0.23.0 // indirect

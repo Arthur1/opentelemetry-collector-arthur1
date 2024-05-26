@@ -1,9 +1,13 @@
 default:
 all_set:
   metrics:
+    runn.elapsed_time:
+      enabled: true
     runn.status:
       enabled: true
 none_set:
   metrics:
+    runn.elapsed_time:
+      enabled: false
     runn.status:
       enabled: false

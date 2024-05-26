@@ -61,6 +61,10 @@ func TestMetricsBuilder(t *testing.T) {
 
 			defaultMetricsCount++
 			allMetricsCount++
+			mb.RecordRunnElapsedTimeDataPoint(ts, 1, "runn.runbook.desc-val", "runn.runbook.step.key-val")
+
+			defaultMetricsCount++
+			allMetricsCount++
 			mb.RecordRunnStatusDataPoint(ts, 1, "runn.runbook.desc-val")
 
 			res := pcommon.NewResource()
@@ -85,6 +89,24 @@ func TestMetricsBuilder(t *testing.T) {
 			validatedMetrics := make(map[string]bool)
 			for i := 0; i < ms.Len(); i++ {
 				switch ms.At(i).Name() {
+				case "runn.elapsed_time":
+					assert.False(t, validatedMetrics["runn.elapsed_time"], "Found a duplicate in the metrics slice: runn.elapsed_time")
+					validatedMetrics["runn.elapsed_time"] = true
+					assert.Equal(t, pmetric.MetricTypeGauge, ms.At(i).Type())
+					assert.Equal(t, 1, ms.At(i).Gauge().DataPoints().Len())
+					assert.Equal(t, "elapsed time of step", ms.At(i).Description())
+					assert.Equal(t, "s", ms.At(i).Unit())
+					dp := ms.At(i).Gauge().DataPoints().At(0)
+					assert.Equal(t, start, dp.StartTimestamp())
+					assert.Equal(t, ts, dp.Timestamp())
+					assert.Equal(t, pmetric.NumberDataPointValueTypeDouble, dp.ValueType())
+					assert.Equal(t, float64(1), dp.DoubleValue())
+					attrVal, ok := dp.Attributes().Get("runn.runbook.desc")
+					assert.True(t, ok)
+					assert.EqualValues(t, "runn.runbook.desc-val", attrVal.Str())
+					attrVal, ok = dp.Attributes().Get("runn.runbook.step.key")
+					assert.True(t, ok)
+					assert.EqualValues(t, "runn.runbook.step.key-val", attrVal.Str())
 				case "runn.status":
 					assert.False(t, validatedMetrics["runn.status"], "Found a duplicate in the metrics slice: runn.status")
 					validatedMetrics["runn.status"] = true

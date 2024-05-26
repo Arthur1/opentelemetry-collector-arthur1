@@ -12,6 +12,21 @@ metrics:
     enabled: false
 ```
 
+### runn.elapsed_time
+
+elapsed time of step
+
+| Unit | Metric Type | Value Type |
+| ---- | ----------- | ---------- |
+| s | Gauge | Double |
+
+#### Attributes
+
+| Name | Description | Values |
+| ---- | ----------- | ------ |
+| runn.runbook.desc | description of runbook | Any Str |
+| runn.runbook.step.key | step key in runbook | Any Str |
+
 ### runn.status
 
 1 if the operation has finished successfully, otherwise 0.

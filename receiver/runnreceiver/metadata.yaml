@@ -15,6 +15,9 @@ attributes:
   runn.runbook.desc:
     description: description of runbook
     type: string
+  runn.runbook.step.key:
+    description: step key in runbook
+    type: string
 
 metrics:
   runn.status:
@@ -27,3 +30,12 @@ metrics:
     unit: 1
     attributes:
       - runn.runbook.desc
+  runn.elapsed_time:
+    description: elapsed time of step
+    enabled: true
+    gauge:
+      value_type: double
+    unit: s
+    attributes:
+      - runn.runbook.desc
+      - runn.runbook.step.key
