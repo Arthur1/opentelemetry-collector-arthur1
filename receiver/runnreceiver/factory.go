@@ -29,7 +29,7 @@ func createDefaultConfig() component.Config {
 	return &config{
 		ControllerConfig:     cc,
 		MetricsBuilderConfig: mbc,
-		Runbooks:             []*runbookConfig{},
+		Runbooks:             []string{},
 	}
 }
 

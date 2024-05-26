@@ -44,7 +44,7 @@ func (s *runnScraper) Start(ctx context.Context, _ component.Host) error {
 		}
 		defer f.Close()
 
-		if _, err := f.WriteString(runbook.Body); err != nil {
+		if _, err := f.WriteString(runbook); err != nil {
 			return err
 		}
 		opDefs = append(opDefs, &runnOperationDef{

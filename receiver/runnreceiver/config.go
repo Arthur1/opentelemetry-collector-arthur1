@@ -8,9 +8,5 @@ import (
 type config struct {
 	scraperhelper.ControllerConfig `mapstructure:",squash"`
 	metadata.MetricsBuilderConfig  `mapstructure:",squash"`
-	Runbooks                       []*runbookConfig `mapstructure:"runbooks"`
-}
-
-type runbookConfig struct {
-	Body string `mapstructure:"body"`
+	Runbooks                       []string `mapstructure:"runbooks"`
 }
