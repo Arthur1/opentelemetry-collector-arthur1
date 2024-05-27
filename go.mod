@@ -5,7 +5,7 @@ module github.com/Arthur1/opentelemetry-collector-arthur1
 go 1.22.3
 
 require (
-	github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.0.0
+	github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.2.0
 	github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver v0.0.0
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.101.0
