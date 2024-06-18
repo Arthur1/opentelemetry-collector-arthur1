@@ -240,6 +240,8 @@ github.com/hashicorp/go-retryablehttp v0.7.5 h1:bJj+Pj19UZMIweq/iie+1u5YCdGrnxCT
 github.com/hashicorp/go-retryablehttp v0.7.5/go.mod h1:Jy/gPYAdjqffZ/yFGCFV2doI5wjtH1ewM9u8iYVjtX8=
 github.com/hashicorp/go-version v1.6.0 h1:feTTfFNnjP967rlCxM/I9g701jU+RN74YKx2mOkIeek=
 github.com/hashicorp/go-version v1.6.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
+github.com/hashicorp/go-version v1.7.0 h1:5tqGy27NaOTB8yJKUZELlFAS/LTKJkrmONwQKeRZfjY=
+github.com/hashicorp/go-version v1.7.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09ZGVZPK5anwXA=
 github.com/hashicorp/golang-lru/v2 v2.0.7 h1:a+bsQ5rvGLjzHuww6tVxozPZFVghXaHOwFs4luLUK2k=
 github.com/hashicorp/golang-lru/v2 v2.0.7/go.mod h1:QeFd9opnmA6QUJc5vARoKUSoFhyfM2/ZepoAG6RGpeM=
 github.com/hasura/go-graphql-client v0.12.1 h1:tL+BCoyubkYYyaQ+tJz+oPe/pSxYwOJHwe5SSqqi6WI=
@@ -530,6 +532,8 @@ go.opentelemetry.io/collector/config/internal v0.100.0 h1:XSbedIpdXOxIEGnnzCZnul
 go.opentelemetry.io/collector/config/internal v0.100.0/go.mod h1:QiG0fNuQ3GxNcF8stKHRUpHRKgyaKjM3G9re9f+dV70=
 go.opentelemetry.io/collector/confmap v0.101.0 h1:pGXZRBKnZqys1HgNECGSi8Pec5RBGa9vVCfrpcvW+kA=
 go.opentelemetry.io/collector/confmap v0.101.0/go.mod h1:BWKPIpYeUzSG6ZgCJMjF7xsLvyrvJCfYURl57E5vhiQ=
+go.opentelemetry.io/collector/confmap v0.103.0 h1:qKKZyWzropSKfgtGv12JzADOXNgThqH1Vx6qzblBE24=
+go.opentelemetry.io/collector/confmap v0.103.0/go.mod h1:TlOmqe/Km3K6WgxyhEAdCb/V1Yp6eSU76fCoiluEa88=
 go.opentelemetry.io/collector/confmap/converter/expandconverter v0.101.0 h1:/uUZlzzxO8QknVCslpYVlQGSq5EG3Dzr6l4w2xW4u2A=
 go.opentelemetry.io/collector/confmap/converter/expandconverter v0.101.0/go.mod h1:GKgiSuL5+ATJE1lrAQVpfSBFX/3XqGyc2qrfQBKpVd8=
 go.opentelemetry.io/collector/confmap/provider/envprovider v0.101.0 h1:I7oSi6hTTaDMbh9k6nxF4YhLqB/t0xXTgrBXGCT53vw=
@@ -560,6 +564,8 @@ go.opentelemetry.io/collector/extension/zpagesextension v0.101.0 h1:hZIkGTgKeVvV
 go.opentelemetry.io/collector/extension/zpagesextension v0.101.0/go.mod h1:sllOMdEbNg2UnMxTO8jSx2OEfAcYX3ud6smuXhN6pbA=
 go.opentelemetry.io/collector/featuregate v1.8.0 h1:p/bAuk5LiSfdYS88yFl/Jzao9bHEYqCh7YvZJ+L+IZg=
 go.opentelemetry.io/collector/featuregate v1.8.0/go.mod h1:w7nUODKxEi3FLf1HslCiE6YWtMtOOrMnSwsDam8Mg9w=
+go.opentelemetry.io/collector/featuregate v1.10.0 h1:krSqokHTp7JthgmtewysqHuOAkcuuZl7G2n91s7HygE=
+go.opentelemetry.io/collector/featuregate v1.10.0/go.mod h1:PsOINaGgTiFc+Tzu2K/X2jP+Ngmlp7YKGV1XrnBkH7U=
 go.opentelemetry.io/collector/filter v0.100.0 h1:XQyhnqJSK2sw+e9yvpkvl7y8QdJwH/gAnFoZDfEZ0dQ=
 go.opentelemetry.io/collector/filter v0.100.0/go.mod h1:3xGRpZo11DMJTDtMUGsDNkxKM6LMHqROGrQ/aTvskh8=
 go.opentelemetry.io/collector/otelcol v0.101.0 h1:6kF2dcXpu5NjxK2j0ksCRzZhqigxCGrP/u7n57FSMOg=
