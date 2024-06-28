@@ -1,6 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["major"],
+      "prBodyNotes": [":warning: MAJOR VERSION UPDATE :warning: - please manually update this package"]
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchSourceUrlPrefixes": ["https://go.opentelemetry.io/build-tools"],
+      "groupName": "All go.opentelemetry.io/build-tools packages"
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchSourceUrls": ["https://github.com/open-telemetry/opentelemetry-collector"],
+      "groupName": "All OpenTelemetry Collector packages",
+      "matchUpdateTypes": ["major", "minor", "patch"]
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchSourceUrls": ["https://github.com/open-telemetry/opentelemetry-go-contrib"],
+      "groupName": "All opentelemetry-go-contrib packages"
+    }
   ]
 }
