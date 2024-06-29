@@ -13,6 +13,7 @@ jobs:
           - receiver/cloudflaremetricsreceiver
           - receiver/runnreceiver
           - internal/tools
+      fail-fast: false
     uses: ./.github/workflows/wf-test-go.yml
     with:
       package-path: ${{ matrix.package-path }}
