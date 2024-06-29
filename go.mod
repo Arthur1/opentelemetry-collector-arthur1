@@ -105,7 +105,7 @@ require (
 	github.com/hashicorp/go-retryablehttp v0.7.5 // indirect
 	github.com/hashicorp/go-version v1.7.0 // indirect
 	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
-	github.com/hasura/go-graphql-client v0.12.1 // indirect
+	github.com/hasura/go-graphql-client v0.12.2 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jhump/protoreflect v1.15.6 // indirect
 	github.com/jhump/protoreflect/v2 v2.0.0-20230705224148-00680b949112 // indirect
@@ -245,7 +245,7 @@ require (
 	modernc.org/sqlite v1.29.10 // indirect
 	modernc.org/strutil v1.2.0 // indirect
 	modernc.org/token v1.1.0 // indirect
-	nhooyr.io/websocket v1.8.10 // indirect
+	nhooyr.io/websocket v1.8.11 // indirect
 )
 
 replace github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver => ./receiver/runnreceiver
