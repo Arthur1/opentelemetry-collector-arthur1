@@ -6,7 +6,7 @@ toolchain go1.22.4
 
 require (
 	github.com/mfridman/tparse v0.14.0
-	go.opentelemetry.io/collector/cmd/builder v0.103.0
+	go.opentelemetry.io/collector/cmd/builder v0.103.1
 	go.opentelemetry.io/collector/cmd/mdatagen v0.103.0
 )
 
