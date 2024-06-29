@@ -6,7 +6,19 @@ on:
 
 jobs:
   test-go:
+    strategy:
+      matrix:
+        package-path:
+          - '.'
+          - receiver/cloudflaremetricsreceiver
+          - receiver/runnreceiver
+          - internal/tools
     uses: ./.github/workflows/wf-test-go.yml
+    with:
+      package-path: ${{ matrix.package-path }}
+  
+  lint-go:
+    uses: ./.github/workflows/wf-lint-go.yml
 
   build:
     uses: ./.github/workflows/wf-build.yml
