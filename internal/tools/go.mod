@@ -61,3 +61,5 @@ require (
 	google.golang.org/protobuf v1.34.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace go.opentelemetry.io/collector/cmd/mdatagen v0.103.0 => github.com/Arthur1/opentelemetry-collector/cmd/mdatagen v0.0.0-20240629210926-ec245be2a6ea

@@ -39,3 +39,7 @@ metrics:
     attributes:
       - runn.runbook.desc
       - runn.runbook.step.key
+
+tests:
+  goleak:
+    skip: true # https://github.com/census-instrumentation/opencensus-go/issues/1191
