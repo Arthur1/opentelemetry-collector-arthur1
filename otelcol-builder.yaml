@@ -2,11 +2,11 @@ dist:
   module: github.com/Arthur1/opentelemetry-collector-arthur1
   description: Custom OpenTelemetry Collector for Testing Components Created by Arthur1
   output_path: .
-  version: 0.0.0
+  version: 0.3.0
 
 receivers:
-  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver v0.0.0
-  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.0.0
+  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver v0.3.0
+  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.3.0
 
 exporters:
   - gomod: go.opentelemetry.io/collector/exporter/debugexporter v0.103.0
