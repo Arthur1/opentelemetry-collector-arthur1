@@ -10,3 +10,16 @@ jobs:
 
   build:
     uses: ./.github/workflows/wf-build.yml
+  
+  tagpr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/create-github-app-token@v1
+      id: app-token
+      with:
+        app-id: 364898
+        private-key: ${{ secrets.ARTHUR1_BOT_PRIVATE_KEY }}
+    - uses: Songmu/tagpr@v1
+      env:
+        GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
