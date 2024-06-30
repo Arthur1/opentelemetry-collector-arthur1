@@ -42,7 +42,7 @@ func (p *mackerelProcessor) Start(ctx context.Context, _ component.Host) error {
 	p.cancel = cancel
 
 	if err := p.sync(ctx); err != nil {
-		return err
+		fmt.Printf("error: %v\n", err)
 	}
 
 	go func() {
