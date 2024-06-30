@@ -5,13 +5,18 @@ dist:
   version: 0.3.0
 
 receivers:
-  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver v0.3.0
+  # - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver v0.3.0
   - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.3.0
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver v0.103.0
+
+processors:
+  - gomod: github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor v0.3.0
 
 exporters:
   - gomod: go.opentelemetry.io/collector/exporter/debugexporter v0.103.0
   - gomod: go.opentelemetry.io/collector/exporter/otlpexporter v0.103.0
 
 replaces:
-  - github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver => ./receiver/runnreceiver
+  # - github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver => ./receiver/runnreceiver
   - github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver => ./receiver/cloudflaremetricsreceiver
+  - github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor => ./processor/mackerelattributesprocessor

@@ -1,0 +1,17 @@
+default:
+all_set:
+  resource_attributes:
+    mackerelio.host.id:
+      enabled: true
+    mackerelio.host.url:
+      enabled: true
+    mackerelio.org.name:
+      enabled: true
+none_set:
+  resource_attributes:
+    mackerelio.host.id:
+      enabled: false
+    mackerelio.host.url:
+      enabled: false
+    mackerelio.org.name:
+      enabled: false
