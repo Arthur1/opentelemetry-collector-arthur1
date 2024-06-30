@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Arthur1/otelcol-metadata-schema/main/metadata.schema.json
+
+type: mackerelattributes
+scope_name: otelcol/mackerelattributesprocessor
+
+status:
+  class: processor
+  stability:
+    development: [traces, metrics, logs]
+  codeowners:
+    active: [Arthur1]
+  distributions: [arthur1]
+
+resource_attributes:
+  mackerelio.host.id:
+    description: Host id of mackerel.io
+    type: string
+    enabled: true
+  mackerelio.host.url:
+    description: Host url of mackerel.io
+    type: string
+    enabled: true
+  mackerelio.org.name:
+    description: Organization name of mackerel.io
+    type: string
+    enabled: true

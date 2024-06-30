@@ -11,8 +11,9 @@ import (
 	"go.opentelemetry.io/collector/receiver"
 	debugexporter "go.opentelemetry.io/collector/exporter/debugexporter"
 	otlpexporter "go.opentelemetry.io/collector/exporter/otlpexporter"
-	runnreceiver "github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver"
+	mackerelattributesprocessor "github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor"
 	cloudflaremetricsreceiver "github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver"
+	hostmetricsreceiver "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver"
 )
 
 func components() (otelcol.Factories, error) {
@@ -26,8 +27,8 @@ func components() (otelcol.Factories, error) {
 	}
 
 	factories.Receivers, err = receiver.MakeFactoryMap(
-		runnreceiver.NewFactory(),
 		cloudflaremetricsreceiver.NewFactory(),
+		hostmetricsreceiver.NewFactory(),
 	)
 	if err != nil {
 		return otelcol.Factories{}, err
@@ -42,6 +43,7 @@ func components() (otelcol.Factories, error) {
 	}
 
 	factories.Processors, err = processor.MakeFactoryMap(
+		mackerelattributesprocessor.NewFactory(),
 	)
 	if err != nil {
 		return otelcol.Factories{}, err

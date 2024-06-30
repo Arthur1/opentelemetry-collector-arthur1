@@ -12,6 +12,7 @@ jobs:
           - '.'
           - receiver/cloudflaremetricsreceiver
           - receiver/runnreceiver
+          - processor/mackerelattributesprocessor
           - internal/tools
       fail-fast: false
     uses: ./.github/workflows/wf-test-go.yml
