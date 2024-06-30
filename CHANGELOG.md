@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.4.0](https://github.com/Arthur1/opentelemetry-collector-arthur1/compare/v0.3.0...v0.4.0) - 2024-06-30
+- [mackerelattributesprocessor] created by @Arthur1 in https://github.com/Arthur1/opentelemetry-collector-arthur1/pull/43
+
 ## [v0.3.0](https://github.com/Arthur1/opentelemetry-collector-arthur1/compare/v0.2.0...v0.3.0) - 2024-06-29
 - update opentelemetry collector to 0.103.0 by @Arthur1 in https://github.com/Arthur1/opentelemetry-collector-arthur1/pull/27
 - custom renovate config to merge pull requests by @Arthur1 in https://github.com/Arthur1/opentelemetry-collector-arthur1/pull/30
