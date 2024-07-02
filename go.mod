@@ -4,7 +4,7 @@ module github.com/Arthur1/opentelemetry-collector-arthur1
 
 go 1.21.0
 
-toolchain go1.22.4
+toolchain go1.22.5
 
 require (
 	github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor v0.4.0
