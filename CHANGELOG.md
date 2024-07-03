@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.4.1](https://github.com/Arthur1/opentelemetry-collector-arthur1/compare/v0.4.0...v0.4.1) - 2024-07-03
+- Update dependency go to v1.22.5 by @renovate in https://github.com/Arthur1/opentelemetry-collector-arthur1/pull/48
+
 ## [v0.4.0](https://github.com/Arthur1/opentelemetry-collector-arthur1/compare/v0.3.0...v0.4.0) - 2024-06-30
 - [mackerelattributesprocessor] created by @Arthur1 in https://github.com/Arthur1/opentelemetry-collector-arthur1/pull/43
 
