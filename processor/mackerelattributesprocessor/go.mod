@@ -5,7 +5,7 @@ go 1.21.0
 require (
 	github.com/google/go-cmp v0.6.0
 	github.com/mackerelio/mackerel-agent v0.82.0
-	github.com/mackerelio/mackerel-client-go v0.31.0
+	github.com/mackerelio/mackerel-client-go v0.34.0
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.103.0
 	go.opentelemetry.io/collector/confmap v0.103.0
