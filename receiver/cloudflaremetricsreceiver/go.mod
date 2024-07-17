@@ -3,7 +3,8 @@ module github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremet
 go 1.21.0
 
 require (
-	github.com/cloudflare/cloudflare-go v0.98.0
+	github.com/cloudflare/cloudflare-go v0.99.0
+	github.com/cloudflare/cloudflare-go/v2 v2.4.0
 	github.com/google/go-cmp v0.6.0
 	github.com/hasura/go-graphql-client v0.12.2
 	github.com/stretchr/testify v1.9.0
