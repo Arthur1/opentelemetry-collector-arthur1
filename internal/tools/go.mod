@@ -2,7 +2,7 @@ module github.com/Arthur1/opentelemetry-collector-arthur1/internal/tools
 
 go 1.21.0
 
-toolchain go1.22.5
+toolchain go1.23.2
 
 require (
 	github.com/mfridman/tparse v0.14.0
