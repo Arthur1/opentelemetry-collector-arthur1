@@ -20,6 +20,8 @@ github.com/go-logr/stdr v1.2.2 h1:hSWxHoqTgW2S2qGc0LTAI563KZ5YKYRhT3MFKZMbjag=
 github.com/go-logr/stdr v1.2.2/go.mod h1:mMo/vtBO5dYbehREoey6XUKy/eSumjCCveDpRre4VKE=
 github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1 h1:TQcrn6Wq+sKGkpyPvppOz99zsMBaUOKXq6HSv655U1c=
 github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
+github.com/go-viper/mapstructure/v2 v2.2.1 h1:ZAaOCxANMuZx5RCeg0mBdEZk7DZasvvZIxtHqx8aGss=
+github.com/go-viper/mapstructure/v2 v2.2.1/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
 github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
 github.com/gogo/protobuf v1.3.2/go.mod h1:P1XiOD3dCwIKUDQYPy72D8LYyHL2YPYrpS2s69NZV8Q=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
@@ -88,6 +90,8 @@ go.opentelemetry.io/collector/config/configtelemetry v0.103.0 h1:KLbhkFqdw9D31t0
 go.opentelemetry.io/collector/config/configtelemetry v0.103.0/go.mod h1:WxWKNVAQJg/Io1nA3xLgn/DWLE/W1QOB2+/Js3ACi40=
 go.opentelemetry.io/collector/confmap v0.103.0 h1:qKKZyWzropSKfgtGv12JzADOXNgThqH1Vx6qzblBE24=
 go.opentelemetry.io/collector/confmap v0.103.0/go.mod h1:TlOmqe/Km3K6WgxyhEAdCb/V1Yp6eSU76fCoiluEa88=
+go.opentelemetry.io/collector/confmap v1.18.0 h1:UEOeJY8RW8lZ1O4lzHSGqolS7uzkpXQi5fa8SidKqQg=
+go.opentelemetry.io/collector/confmap v1.18.0/go.mod h1:GgNu1ElPGmLn9govqIfjaopvdspw4PJ9KeDtWC4E2Q4=
 go.opentelemetry.io/collector/consumer v0.103.0 h1:L/7SA/U2ua5L4yTLChnI9I+IFGKYU5ufNQ76QKYcPYs=
 go.opentelemetry.io/collector/consumer v0.103.0/go.mod h1:7jdYb9kSSOsu2R618VRX0VJ+Jt3OrDvvUsDToHTEOLI=
 go.opentelemetry.io/collector/featuregate v1.10.0 h1:krSqokHTp7JthgmtewysqHuOAkcuuZl7G2n91s7HygE=

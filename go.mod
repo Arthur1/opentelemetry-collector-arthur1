@@ -2,9 +2,9 @@
 
 module github.com/Arthur1/opentelemetry-collector-arthur1
 
-go 1.21.0
+go 1.22.0
 
-toolchain go1.22.5
+toolchain go1.23.2
 
 require (
 	github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor v0.4.0
@@ -12,13 +12,13 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver v0.103.0
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.103.0
-	go.opentelemetry.io/collector/confmap v0.103.0
+	go.opentelemetry.io/collector/confmap v1.18.0
 	go.opentelemetry.io/collector/confmap/converter/expandconverter v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/envprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/fileprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/httpprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/httpsprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/yamlprovider v0.103.0
+	go.opentelemetry.io/collector/confmap/provider/envprovider v1.18.0
+	go.opentelemetry.io/collector/confmap/provider/fileprovider v1.18.0
+	go.opentelemetry.io/collector/confmap/provider/httpprovider v1.18.0
+	go.opentelemetry.io/collector/confmap/provider/httpsprovider v1.18.0
+	go.opentelemetry.io/collector/confmap/provider/yamlprovider v1.18.0
 	go.opentelemetry.io/collector/connector v0.103.0
 	go.opentelemetry.io/collector/exporter v0.103.0
 	go.opentelemetry.io/collector/exporter/debugexporter v0.103.0
@@ -44,7 +44,7 @@ require (
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
-	github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1 // indirect
+	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect

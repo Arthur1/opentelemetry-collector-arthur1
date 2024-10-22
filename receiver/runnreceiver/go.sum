@@ -147,6 +147,8 @@ github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqw
 github.com/go-task/slim-sprig v0.0.0-20210107165309-348f09dbbbc0/go.mod h1:fyg7847qk6SyHyPtNmDHnmrv/HOrqktSC+C9fM+CJOE=
 github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1 h1:TQcrn6Wq+sKGkpyPvppOz99zsMBaUOKXq6HSv655U1c=
 github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
+github.com/go-viper/mapstructure/v2 v2.2.1 h1:ZAaOCxANMuZx5RCeg0mBdEZk7DZasvvZIxtHqx8aGss=
+github.com/go-viper/mapstructure/v2 v2.2.1/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
 github.com/gobwas/httphead v0.1.0 h1:exrUm0f4YX0L7EBwZHuCF4GDp8aJfVeBrlLQrs6NqWU=
 github.com/gobwas/httphead v0.1.0/go.mod h1:O/RXo79gxV8G+RqlR/otEwx4Q36zl9rqC5u12GKvMCM=
 github.com/gobwas/pool v0.2.1 h1:xfeeEhW7pwmX8nuLVlqbzVc7udMDrwetjEv+TZIz1og=
@@ -464,6 +466,8 @@ go.opentelemetry.io/collector/config/configtelemetry v0.103.0 h1:KLbhkFqdw9D31t0
 go.opentelemetry.io/collector/config/configtelemetry v0.103.0/go.mod h1:WxWKNVAQJg/Io1nA3xLgn/DWLE/W1QOB2+/Js3ACi40=
 go.opentelemetry.io/collector/confmap v0.103.0 h1:qKKZyWzropSKfgtGv12JzADOXNgThqH1Vx6qzblBE24=
 go.opentelemetry.io/collector/confmap v0.103.0/go.mod h1:TlOmqe/Km3K6WgxyhEAdCb/V1Yp6eSU76fCoiluEa88=
+go.opentelemetry.io/collector/confmap v1.18.0 h1:UEOeJY8RW8lZ1O4lzHSGqolS7uzkpXQi5fa8SidKqQg=
+go.opentelemetry.io/collector/confmap v1.18.0/go.mod h1:GgNu1ElPGmLn9govqIfjaopvdspw4PJ9KeDtWC4E2Q4=
 go.opentelemetry.io/collector/consumer v0.103.0 h1:L/7SA/U2ua5L4yTLChnI9I+IFGKYU5ufNQ76QKYcPYs=
 go.opentelemetry.io/collector/consumer v0.103.0/go.mod h1:7jdYb9kSSOsu2R618VRX0VJ+Jt3OrDvvUsDToHTEOLI=
 go.opentelemetry.io/collector/featuregate v1.10.0 h1:krSqokHTp7JthgmtewysqHuOAkcuuZl7G2n91s7HygE=

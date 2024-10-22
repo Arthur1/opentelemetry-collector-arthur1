@@ -1,6 +1,8 @@
 module github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver
 
-go 1.21.0
+go 1.22.0
+
+toolchain go1.23.2
 
 require (
 	github.com/cloudflare/cloudflare-go v0.98.0
@@ -8,7 +10,7 @@ require (
 	github.com/hasura/go-graphql-client v0.12.2
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.103.0
-	go.opentelemetry.io/collector/confmap v0.103.0
+	go.opentelemetry.io/collector/confmap v1.18.0
 	go.opentelemetry.io/collector/consumer v0.103.0
 	go.opentelemetry.io/collector/filter v0.103.0
 	go.opentelemetry.io/collector/pdata v1.10.0
@@ -23,7 +25,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-logr/logr v1.4.1 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/go-viper/mapstructure/v2 v2.0.0-alpha.1 // indirect
+	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
