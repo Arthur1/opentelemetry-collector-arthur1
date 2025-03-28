@@ -3,7 +3,7 @@ module github.com/Arthur1/opentelemetry-collector-arthur1/receiver/runnreceiver
 go 1.22.3
 
 require (
-	github.com/google/go-cmp v0.6.0
+	github.com/google/go-cmp v0.7.0
 	github.com/k1LoW/runn v0.109.0
 	github.com/stretchr/testify v1.9.0
 	go.opentelemetry.io/collector/component v0.103.0
