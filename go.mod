@@ -2,9 +2,7 @@
 
 module github.com/Arthur1/opentelemetry-collector-arthur1
 
-go 1.21.0
-
-toolchain go1.22.5
+go 1.25.0
 
 require (
 	github.com/Arthur1/opentelemetry-collector-arthur1/processor/mackerelattributesprocessor v0.4.0
@@ -27,7 +25,7 @@ require (
 	go.opentelemetry.io/collector/otelcol v0.103.0
 	go.opentelemetry.io/collector/processor v0.103.0
 	go.opentelemetry.io/collector/receiver v0.103.0
-	golang.org/x/sys v0.21.0
+	golang.org/x/sys v0.47.0
 )
 
 require (
