@@ -7,11 +7,11 @@ require (
 	github.com/mackerelio/mackerel-agent v0.82.0
 	github.com/mackerelio/mackerel-client-go v0.31.0
 	github.com/stretchr/testify v1.9.0
-	go.opentelemetry.io/collector/component v0.103.0
-	go.opentelemetry.io/collector/confmap v0.103.0
-	go.opentelemetry.io/collector/consumer v0.103.0
-	go.opentelemetry.io/collector/pdata v1.10.0
-	go.opentelemetry.io/collector/processor v0.103.0
+	go.opentelemetry.io/collector/component v0.120.0
+	go.opentelemetry.io/collector/confmap v0.107.0
+	go.opentelemetry.io/collector/consumer v0.114.0
+	go.opentelemetry.io/collector/pdata v1.66.0
+	go.opentelemetry.io/collector/processor v0.122.1
 	go.uber.org/goleak v1.3.0
 )
 
