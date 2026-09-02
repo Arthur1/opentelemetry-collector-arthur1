@@ -11,22 +11,22 @@ require (
 	github.com/Arthur1/opentelemetry-collector-arthur1/receiver/cloudflaremetricsreceiver v0.4.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver v0.103.0
 	github.com/stretchr/testify v1.9.0
-	go.opentelemetry.io/collector/component v0.103.0
-	go.opentelemetry.io/collector/confmap v0.103.0
+	go.opentelemetry.io/collector/component v1.66.0
+	go.opentelemetry.io/collector/confmap v1.66.0
 	go.opentelemetry.io/collector/confmap/converter/expandconverter v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/envprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/fileprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/httpprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/httpsprovider v0.103.0
-	go.opentelemetry.io/collector/confmap/provider/yamlprovider v0.103.0
+	go.opentelemetry.io/collector/confmap/provider/envprovider v1.66.0
+	go.opentelemetry.io/collector/confmap/provider/fileprovider v1.66.0
+	go.opentelemetry.io/collector/confmap/provider/httpprovider v1.66.0
+	go.opentelemetry.io/collector/confmap/provider/httpsprovider v1.66.0
+	go.opentelemetry.io/collector/confmap/provider/yamlprovider v1.66.0
 	go.opentelemetry.io/collector/connector v0.103.0
-	go.opentelemetry.io/collector/exporter v0.103.0
+	go.opentelemetry.io/collector/exporter v1.66.0
 	go.opentelemetry.io/collector/exporter/debugexporter v0.103.0
 	go.opentelemetry.io/collector/exporter/otlpexporter v0.103.0
-	go.opentelemetry.io/collector/extension v0.103.0
+	go.opentelemetry.io/collector/extension v1.66.0
 	go.opentelemetry.io/collector/otelcol v0.103.0
-	go.opentelemetry.io/collector/processor v0.103.0
-	go.opentelemetry.io/collector/receiver v0.103.0
+	go.opentelemetry.io/collector/processor v1.66.0
+	go.opentelemetry.io/collector/receiver v1.66.0
 	golang.org/x/sys v0.21.0
 )
 

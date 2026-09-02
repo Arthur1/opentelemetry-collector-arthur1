@@ -6,11 +6,11 @@ require (
 	github.com/google/go-cmp v0.6.0
 	github.com/k1LoW/runn v0.109.0
 	github.com/stretchr/testify v1.9.0
-	go.opentelemetry.io/collector/component v0.103.0
-	go.opentelemetry.io/collector/confmap v0.103.0
-	go.opentelemetry.io/collector/consumer v0.103.0
+	go.opentelemetry.io/collector/component v1.66.0
+	go.opentelemetry.io/collector/confmap v1.66.0
+	go.opentelemetry.io/collector/consumer v1.66.0
 	go.opentelemetry.io/collector/pdata v1.10.0
-	go.opentelemetry.io/collector/receiver v0.103.0
+	go.opentelemetry.io/collector/receiver v1.66.0
 	go.uber.org/goleak v1.3.0
 	go.uber.org/zap v1.27.0
 )
