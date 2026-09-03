@@ -6,6 +6,8 @@ github.com/cloudflare/cloudflare-go v0.94.0 h1:WADmVhCdnn1A9sm5NU08by49Vbh4Lj/JB
 github.com/cloudflare/cloudflare-go v0.94.0/go.mod h1:N1u1cLZ4lG6NeezGOWi7P6aq1DK2iVYg9ze7GZbUmZE=
 github.com/cloudflare/cloudflare-go v0.98.0 h1:IjBVU1jmmG2Vm5emW1cXv/RPCT2XWpRPuB1zgaTdcZY=
 github.com/cloudflare/cloudflare-go v0.98.0/go.mod h1:sQzaVM6DlkWe1yqQXaql+CRt4rA8efMfpoPjNuUE1KI=
+github.com/coder/websocket v1.8.14 h1:9L0p0iKiNOibykf283eHkKUHHrpG7f65OE3BhhO7v9g=
+github.com/coder/websocket v1.8.14/go.mod h1:NX3SzP+inril6yawo5CQXx8+fk145lPDC6pumgx0mVg=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -47,6 +49,8 @@ github.com/hasura/go-graphql-client v0.12.1 h1:tL+BCoyubkYYyaQ+tJz+oPe/pSxYwOJHw
 github.com/hasura/go-graphql-client v0.12.1/go.mod h1:F4N4kR6vY8amio3gEu3tjSZr8GPOXJr3zj72DKixfLE=
 github.com/hasura/go-graphql-client v0.12.2 h1:cYeQK/CELtvFy2jvik4kG0b5UMGngQRYWTTXQkbGHDo=
 github.com/hasura/go-graphql-client v0.12.2/go.mod h1:17qYcHgGSensF/wMAHKUhtMYaRZwZa3TyD7biqH9L3k=
+github.com/hasura/go-graphql-client v0.16.0 h1:DQLfp+djj4j5NPdJkGYym8J55hpm5etML1zqgco78Qc=
+github.com/hasura/go-graphql-client v0.16.0/go.mod h1:z/sO2T0zI+HnPNIevQcs+7xA6/gDOc8hgHMrNBzfL2c=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
